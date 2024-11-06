@@ -12,18 +12,18 @@ public class FindSchema {
     public void Find() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Digite o cÛdigo do veÌculo que deseja encontrar: ");
+        System.out.println("Digite o c√≥digo do ve√≠culo que deseja encontrar: ");
         Integer id = scan.nextInt();
 
-        // Abrindo transaÁ„o
+        // Abrindo transa√ß√£o
         em.getTransaction().begin();
         
         Veiculo veiculo = em.find(Veiculo.class, id);
         
         if (veiculo != null) {
-            System.out.println("VeÌculo encontrado: " + veiculo.toString());
+            System.out.println("Ve√≠culo encontrado: " + veiculo.toString());
         } else {
-            System.out.println("VeÌculo n„o encontrado.");
+            System.out.println("Ve√≠culo n√£o encontrado.");
         }
         
         em.getTransaction().commit();

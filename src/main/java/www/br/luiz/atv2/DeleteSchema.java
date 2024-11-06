@@ -12,10 +12,10 @@ public class DeleteSchema {
     public void Deletar() {
         Scanner scan = new Scanner(System.in);
         
-        System.out.println("Digite o código do veículo que deseja deletar: ");
+        System.out.println("Digite o codigo do veiculo que deseja deletar: ");
         Integer id = scan.nextInt();
         
-        // Abrindo transação
+        // Abrindo transaÃ§Ã£o
         em.getTransaction().begin();
         
         Veiculo veiculo = em.find(Veiculo.class, id);
@@ -23,10 +23,10 @@ public class DeleteSchema {
         if (veiculo != null) {
             em.remove(veiculo);
             em.getTransaction().commit();
-            System.out.println("Veículo deletado com sucesso!");
+            System.out.println("Veiculo deletado com sucesso!");
         } else {
             em.getTransaction().rollback();
-            System.out.println("Veículo não encontrado. Não foi possível deletar.");
+            System.out.println("Veiculo nÃ£o encontrado. NÃ£o foi possivel deletar.");
         }
 
         // Fechando
